@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+/* Color Variables */
+:root {
+  --white: #fff;
+  --black: #222;
+  --green: #6cbe02;
+  --grey1: #f0f0f0;
+  --grey2: #e9d7d3;
+}
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* 
+=================
+Header
+=================
+*/
+
+.header {
+  overflow: hidden;
+  position: relative;
+  min-height: 13vh;
+  overflow-x: hidden;
+  z-index: 0;
+  background-color: #CCF1FF;
+}
+
+/* 
+=================
+Navigation
+=================
+*/
+.navigation {
+  position: relative;
+  z-index: 2;
+  height: 6rem;
+  line-height: 6rem;
+}
+
+.nav-center {
+  justify-content: space-between;
+}
+
+.logo {
+  position: relative;
+  top: 10px;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.nav-center .nav-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.nav-center .nav-link {
+  position: relative;
+  top: 10px;
+  font-size: 1.8rem;
+  padding: 1rem;
+  color: black;
+}
+
+.nav-center .nav-link:hover {
+  color: pink;
+}
+
+.nav-center .hamburger {
+  display: none;
+  font-size: 2.3rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-list {
+    position: fixed;
+    top: 12%;
+    left: -35rem;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    height: 100%;
+    width: 0%;
+    max-width: 35rem;
+    z-index: 100;
+    transition: all 300ms ease-in-out;
+  }
+
+  .nav-list.open {
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-list .nav-item {
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+
+  .nav-list .nav-link {
+    font-size: 2rem;
+    color: var(--black);
+  }
+
+  .nav-center .hamburger {
+    display: block;
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+/* Hero */
+
+.hero,
+.heroslider {
+  position: relative;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-button-next {
+  right: -50px;
+}
+
+.swiper-button-prev {
+  left: -50px;
+}
+
+.header:hover .swiper-button-next {
+  right: 40px;
+}
+.header:hover .swiper-button-prev {
+  left: 40px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  padding: 0.5rem 2.3rem;
+  transition: all 500ms ease-in-out;
+}
+
+.swiper-icon {
+  font-size: 5rem;
+  color: white;
+}
+
+.header .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 1;
+  text-align: center;
+}
+
+.header .content h1 {
+  font-size: 4rem;
+  color: rgb(205, 241, 174);
+  margin-bottom: 4rem;
+}
+
+.header .search {
+  width: 70rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .search input {
+  width: 100%;
+  padding: 1.5rem 0;
+  text-indent: 1rem;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  outline: none;
+  border: none;
+}
+
+.header .search a {
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  background-color: var(--green);
+  color: white;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 996px) {
+  .header .content h1 {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .header .search {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 567px) {
+  .header .content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .header .search {
+    width: 100%;
+  }
+
+  .header .search input {
+    padding: 1rem 0;
+    font-size: 1.3rem;
+  }
+
+  .header .search a {
+    padding: 1rem;
+  }
+
+  .header:hover .swiper-button-next {
+    right: 5px;
+  }
+  .header:hover .swiper-button-prev {
+    left: 5px;
+  }
+
+  .swiper-icon {
+    font-size: 3rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 0.2rem 2.3rem;
+  }
+}
+
+
+
+
+
+
+
+/*-----------contact us page---------*/
+
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+  }
+  
+  .location iframe{
+    width: 100%;
+  }
+  
+  .contact-us{
+    width: 80%;
+    margin: auto;
+  }
+  
+  .contact-col{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+  }
+  
+  .contact-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .contact-col div .fa{
+    font-size: 35px;
+    color: #f44336;
+    margin: 10px;
+    margin-right: 30px;
+  }
+  
+  .contact-col div p{
+    padding: 0;
+  }
+  
+  .contact-col div h5{
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 400;
+  }
+  
+  .contact-col input, .contact-col textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  
+  /*-------about-us-page*/
+  .sub-header h1{
+    color: rgb(246, 242, 242);
+    margin-bottom: 100px;
+  }
+  
+  .about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+  
+  .about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+  }
+  
+  .about-col img{
+    width: 100%;
+  }
+  
+  .about-col h1{
+    padding-top: 0;
+  }
+  
+  .about-col p{
+    padding: 15px 0 25px;
+  }
+  
+  .red-btn{
+    border: 1px solid #f44336;
+    background: transparent;
+    color: #f44336;
+  }
+  
+  .red-btn:hover{
+    color: #fff;
+  }
+  
+  
+  /*-------footer--------*/
+  .footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .footer h1{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+  
+  .sub-header{
+    height: 50vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0) url('../img/background.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+  }

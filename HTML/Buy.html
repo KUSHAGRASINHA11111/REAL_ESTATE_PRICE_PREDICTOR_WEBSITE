@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="/CSS/Buy.css" />
+    <title>Find My Home</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="navigation">
+            <div class="nav-center container d-flex">
+                <a href="/" class="logo">
+                    <h1>FIND MY HOME</h1>
+                </a>
+
+                <ul class="nav-list d-flex">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Price Predictor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Buy Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger" style="color: black;">
+                    <i class="bx bx-menu-alt-left"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <form id="search-form">
+        <label for="state-select" id="style-state">Select a state:</label>
+        <select id="state-select" required>
+            <option value="AP">Andhra Pradesh</option>
+            <option value="ARP">Arunachal Pradesh</option>
+            <option value="AZ">Assam</option>
+            <option value="BR">Bihar</option>
+            <option value="CHT">Chhattisgarh</option>
+            <option value="G">Goa</option>
+            <option value="GJ">Gujarat</option>
+            <option value="HR">Haryana</option>
+            <option value="HP">Himachal Pradesh</option>
+            <option value="JH">Jharkhand</option>
+            <option value="KR">Karnataka</option>
+            <option value="KE">Kerala</option>
+            <option value="MP">Madhya Pradesh</option>
+            <option value="MH">Maharashtra</option>
+            <option value="MN">Manipur</option>
+            <option value="MG">Meghalaya</option>
+            <option value="MZ">Mizoram</option>
+            <option value="NG">Nagaland</option>
+            <option value="OD">Odisha</option>
+            <option value="PB">Punjab</option>
+            <option value="RJ">Rajasthan</option>
+            <option value="SK">Sikkim</option>
+            <option value="TN">Tamil Nadu</option>
+            <option value="TL">Telangana</option>
+            <option value="TR">Tripura</option>
+            <option value="UP">Uttar Pradesh</option>
+            <option value="UK">Uttarakhand</option>
+            <option value="WB">West Bengal</option>
+        </select>
+
+
+        <label for="city-select" id="style-city">Select a city:</label>
+        <select id="city-select" required>
+            <option value="">--Select--</option>
+        </select>
+
+        <br>
+        <br>
+        <button type="submit" class="search-btn">Search Here</button>
+    </form>
+
+    <!-- <div class="container mt-5">
+
+		<div class="form-group">
+			<label for="state-select">Select a state:</label>
+			<select class="form-control" id="state-select">
+				<option value="">-- Select a state --</option>
+				<option value="AP">Andhra Pradesh</option>
+				<option value="ARP">Arunachal Pradesh</option>
+				<option value="AZ">Assam</option>
+                <option value="BR">Bihar</option>
+                <option value="CHT">Chhattisgarh</option>
+                <option value="G">Goa</option>
+                <option value="GJ">Gujarat</option>
+                <option value="HR">Haryana</option>
+                <option value="HP">Himachal Pradesh</option>
+                <option value="JH">Jharkhand</option>
+                <option value="KR">Karnataka</option>
+                <option value="KE">Kerala</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="MN">Manipur</option>
+                <option value="MG">Meghalaya</option>
+                <option value="MZ">Mizoram</option>
+                <option value="NG">Nagaland</option>
+                <option value="OD">Odisha</option>
+                <option value="PB">Punjab</option>
+                <option value="RJ">Rajasthan</option>
+                <option value="SK">Sikkim</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="TL">Telangana</option>
+                <option value="TR">Tripura</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="UK">Uttarakhand</option>
+                <option value="WB">West Bengal</option>
+
+
+			</select>
+		</div>
+
+
+		<div class="form-group">
+			<label for="city-select">Select a city:</label>
+			<select class="form-control" id="city-select">
+				<option value="">-- Select a city --</option>
+			</select>
+		</div>
+
+	</div> -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script>
+        // JavaScript code for populating the city select based on the state select
+        const stateSelect = document.getElementById("state-select");
+        const citySelect = document.getElementById("city-select");
+
+        const citiesByState = {
+            AP: ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Rajamahendravaram', 'Kurnool', 'Kakinada', 'Tirupati', 'Kadapa', 'Eluru', 'Vizianagaram', 'Anantapur', 'Nandyal', 'Ongole', 'Adoni', 'Madanapalle', 'Machilipatnam', 'Tenali', 'Proddatur', 'Chittoor', 'Hindupur', 'Srikakulam', 'Bhimavaram', 'Tadepalligudem', 'Guntakal', 'Dharmavaram', 'Gudivada', 'Narasaraopet', 'Kadiri', 'Tadipatri', 'Mangalagiri', 'Chilakaluripet',],
+            ARP: ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Kurung Kumey', 'Lohit', 'Lower Dibang Valley', 'Papum Pare', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'],
+            AZ: ['Guwahati', 'Silchar', 'Dibrugarh', 'Jorhat', 'Nagaon (Nowgong)', 'Tinsukia', 'Tezpur', 'Bongaigaon', 'Karimganj', 'Dhubri', 'Diphu', 'North Lakhimpur', 'Lumding', 'Goalpara', 'Sibsagar', 'Haflong', 'Barpeta', 'Golaghat', 'Bilasipara', 'Lanka', 'Hojai', 'Barpeta Road', 'Digboi', 'Kokrajhar', 'Hailakandi'],
+            BR: ['Patna', 'Muzaffarpur', 'Gaya', 'Purnia', 'Begusarai', 'Bhagalpur', 'Bihar Sharif', 'Darbhanga', 'Arrah', 'Katihar', 'Munger', 'Chhapra', 'Mehsi', 'Danapur', 'Bettiah', 'Saharsa', 'Hajipur', 'Sasaram', 'Dehri', 'Siwan', 'Motihari', 'Nawada', 'Bagaha', 'Buxar', 'Kishanganj', 'Sitamarhi', 'Jamalpur', 'Jehanabad', 'Aurangabad'],
+            CHT: [],
+            G: [],
+            GJ: [],
+            HR: [],
+            HP: [],
+            JH: [],
+            KR: [],
+            KE: [],
+            MP: [],
+            MH: [],
+            MG: [],
+            MZ: [],
+            NG: [],
+            OD: [],
+            PB: [],
+            RJ: [],
+            SK: [],
+            TN: [],
+            TL: [],
+            TR: [],
+            UP: [],
+            UK: [],
+            WB: [],
+        };
+
+        stateSelect.addEventListener("change", (event) => {
+            const selectedState = event.target.value;
+            const cities = citiesByState[selectedState] || [];
+
+            // Clear any existing options in the city select
+            citySelect.innerHTML = "";
+
+            // Add new options based on the selected state
+            cities.forEach((city) => {
+                const option = document.createElement("option");
+                option.value = city.toLowerCase().replace(" ", "-");
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        });
+
+        // JavaScript code for handling form submission and redirecting to the selected city's page
+        const searchForm = document.getElementById("search-form");
+
+        searchForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            const selectedCity = citySelect.value;
+
+            if (selectedCity) {
+                const url = `/CITIES HTML/${selectedCity}.html`;
+                window.location.href = url; // Redirect to the selected city's page
+            }
+        });
+    </script>
+
+
+    <!-- <script>
+
+		const cities = {
+			AP: ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Rajamahendravaram', 'Kurnool',  'Kakinada',  'Tirupati',  'Kadapa',  'Eluru',  'Vizianagaram',  'Anantapur',  'Nandyal',  'Ongole',  'Adoni',  'Madanapalle',  'Machilipatnam',  'Tenali',  'Proddatur',  'Chittoor',  'Hindupur',  'Srikakulam',  'Bhimavaram',  'Tadepalligudem',  'Guntakal',  'Dharmavaram',  'Gudivada',  'Narasaraopet',  'Kadiri',  'Tadipatri',  'Mangalagiri',  'Chilakaluripet', ],
+			ARP: ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Kurung Kumey', 'Lohit', 'Lower Dibang Valley', 'Papum Pare', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'],
+			AZ: ['Guwahati', 'Silchar', 'Dibrugarh', 'Jorhat', 'Nagaon (Nowgong)', 'Tinsukia', 'Tezpur', 'Bongaigaon', 'Karimganj', 'Dhubri', 'Diphu', 'North Lakhimpur', 'Lumding', 'Goalpara', 'Sibsagar', 'Haflong', 'Barpeta', 'Golaghat', 'Bilasipara', 'Lanka', 'Hojai', 'Barpeta Road', 'Digboi', 'Kokrajhar', 'Hailakandi'],
+            BR: ['Patna', 'Muzaffarpur', 'Gaya', 'Purnia', 'Begusarai', 'Bhagalpur', 'Bihar Sharif', 'Darbhanga', 'Arrah', 'Katihar', 'Munger', 'Chhapra', 'Mehsi', 'Danapur', 'Bettiah', 'Saharsa', 'Hajipur', 'Sasaram', 'Dehri', 'Siwan', 'Motihari', 'Nawada', 'Bagaha', 'Buxar', 'Kishanganj', 'Sitamarhi', 'Jamalpur', 'Jehanabad', 'Aurangabad'],
+            CHT: [],
+            G: [],
+            GJ: [],
+            HR: [],
+            HP: [],
+            JH: [],
+            KR: [],
+            KE: [],
+            MP: [],
+            MH: [],
+            MG: [],
+            MZ: [],
+            NG: [],
+            OD: [],
+            PB: [],
+            RJ: [],
+            SK: [],
+            TN: [],
+            TL: [],
+            TR: [],
+            UP: [],
+            UK: [],
+            WB: [],
+			
+		};
+
+	
+		$('#state-select').on('change', function() {
+			const state = $(this).val();
+			const stateCities = cities[state];
+			
+			$('#city-select').empty();
+
+			$.each(stateCities, function(index, value) {
+				$('#city-select').append($('<option>').text(value).attr('value', value));
+			});
+		});
+	</script> -->
+
+    <script src="/js/index.js"></script>
+
+
+</body>
+
+</html>
